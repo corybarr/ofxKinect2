@@ -29,4 +29,18 @@ namespace ofxKinect2
 			dst_ptr++;
 		}
 	}
+
+	void getMappedColor(ofFloatColor &col, const unsigned char* data_, int index) {
+		__try
+		{
+			col.r = data_[index * 4] / 255.f;
+			col.g = data_[index * 4 + 1] / 255.f;
+			col.b = data_[index * 4 + 2] / 255.f;
+			col.a = data_[index * 4 + 3] / 255.f;
+		}
+		__except (true)
+		{ 
+			col = ofFloatColor(0, 0, 0, 0);
+		}
+	}
 } // namespace ofxKinect2

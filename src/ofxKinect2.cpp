@@ -2072,10 +2072,19 @@ vector<ofFloatColor> Mapper::getFloatColorsCoordinatesToDepthFrame()
 		int index = (int)depth_to_color_points[i].x + (int)depth_to_color_points[i].y * col_width;
 		if (depth_to_color_points[i].x >= 0 && depth_to_color_points[i].x < col_width && depth_to_color_points[i].y >= 0 && depth_to_color_points[i].y < col_height)
 		{
-				col.r = data[index * 4] / 255.f;
-				col.g = data[index * 4 + 1] / 255.f;
-				col.b = data[index * 4 + 2] / 255.f;
-				col.a = data[index * 4 + 3] / 255.f;
+
+			getMappedColor(col, data, index);
+			//__try
+			//{
+			//	col.r = data[index * 4] / 255.f;
+			//	col.g = data[index * 4 + 1] / 255.f;
+			//	col.b = data[index * 4 + 2] / 255.f;
+			//	col.a = data[index * 4 + 3] / 255.f;
+			//}
+			//__except (true)
+			//{ 
+			//	col = ofFloatColor(0, 0, 0, 0);
+			//}
 		}
 		else
 		{
