@@ -1,0 +1,8 @@
+example/obj/*
+example/bin/*
+example_pointcloud/bin/*
+example_pointcloud/.vs/
+example_pointcloud/obj/
+example/.vs/
+example/example.VC.db
+example_pointcloud/example_pointcloud.VC.db
